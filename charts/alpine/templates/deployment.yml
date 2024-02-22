@@ -2,19 +2,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  {{ include "chart.fullname" . }}-deployment
+  name:  {{ .Chart.name }}-deployment
   namespace: {{ .Values.namespace }}
-  labels:
-    {{ include "chart.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{ include "chart.labels" . | nindent 4 }}
+      {{ .Chart.name | nindent 4 }}
   template:
-    metadata:
-      labels:
-        {{ include "chart.labels" . | nindent 8 }}
     spec:
       containers:
       - name: {{ .Release.Name }}
@@ -31,13 +26,13 @@ spec:
             memory: {{ .Values.resources.limits.memory }}
             cpu: {{ .Values.resources.limits.cpu }}
         volumeMounts:
-          - name: {{ include "chart.fullname" . }}-data
+          - name: {{ .Chart.name }}-data
             mountPath: /data
       volumes:
-      - name: {{ include "chart.fullname" . }}-data
+      - name: {{ .Chart.name }}-data
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ include "chart.fullname" . }}-data
+          claimName: {{ .Chart.name }}-data
       {{- else }}
         emptyDir: {}
       {{- end }}
