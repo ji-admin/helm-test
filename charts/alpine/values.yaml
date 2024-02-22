@@ -7,7 +7,7 @@ service:
   port: 80
   type: ClusterIP
 namespace: default
-ingress: 
+ingress:
   enabled: false
   className: nginx
   host: corp.local
