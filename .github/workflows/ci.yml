@@ -1,9 +1,9 @@
-name: Lint and Test Charts
+name: ci
 
 on: pull_request
 
 jobs:
-  lint-test:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
