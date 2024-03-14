@@ -108,23 +108,23 @@ destination d_ppp { file("/var/log/ppp.log"); };
 #### Remote Destinations
 
 
-destination d_net_auth { file("/var/log/HOSTS/$HOST/auth.log"); };
-destination d_net_cron { file("/var/log/HOSTS/$HOST/cron.log"); };
-destination d_net_daemon { file("/var/log/HOSTS/$HOST/daemon.log"); };
-destination d_net_kern { file("/var/log/HOSTS/$HOST/kern.log"); };
-destination d_net_lpr { file("/var/log/HOSTS/$HOST/lpr.log"); };
-destination d_net_mail { file("/var/log/HOSTS/$HOST/mail.log"); };
-destination d_net_syslog { file("/var/log/HOSTS/$HOST/syslog.log"); };
-destination d_net_user { file("/var/log/HOSTS/$HOST/user.log"); };
-destination d_net_uucp { file("/var/log/HOSTS/$HOST/uucp.log"); };
+destination d_net_auth { file("/var/log/remotelogs/$HOST/auth.log"); };
+destination d_net_cron { file("/var/log/remotelogs/$HOST/cron.log"); };
+destination d_net_daemon { file("/var/log/remotelogs/$HOST/daemon.log"); };
+destination d_net_kern { file("/var/log/remotelogs/$HOST/kern.log"); };
+destination d_net_lpr { file("/var/log/remotelogs/$HOST/lpr.log"); };
+destination d_net_mail { file("/var/log/remotelogs/$HOST/mail.log"); };
+destination d_net_syslog { file("/var/log/remotelogs/$HOST/syslog.log"); };
+destination d_net_user { file("/var/log/remotelogs/$HOST/user.log"); };
+destination d_net_uucp { file("/var/log/remotelogs/$HOST/uucp.log"); };
 
-destination d_net_mailinfo { file("/var/log/HOSTS/$HOST/mail/mail.info"); };
-destination d_net_mailwarn { file("/var/log/HOSTS/$HOST/mail/mail.warn"); };
-destination d_net_mailerr { file("/var/log/HOSTS/$HOST/mail/mail.err"); };
+destination d_net_mailinfo { file("/var/log/remotelogs/$HOST/mail/mail.info"); };
+destination d_net_mailwarn { file("/var/log/remotelogs/$HOST/mail/mail.warn"); };
+destination d_net_mailerr { file("/var/log/remotelogs/$HOST/mail/mail.err"); };
 
-destination d_net_debug { file("/var/log/HOSTS/$HOST/debug"); };
-destination d_net_error { file("/var/log/HOSTS/$HOST/error"); };
-destination d_net_messages { file("/var/log/HOSTS/$HOST/messages"); }; 
+destination d_net_debug { file("/var/log/remotelogs/$HOST/debug"); };
+destination d_net_error { file("/var/log/remotelogs/$HOST/error"); };
+destination d_net_messages { file("/var/log/remotelogs/$HOST/messages"); }; 
 
 ########################
 # Filters
